@@ -1,0 +1,18 @@
+# Let's launch a PostgreSQL container
+docker run -d --name pg -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data/pgdata -v pg_data:/var/lib/postgresql/data -p 5432:5432 postgres:latest
+
+# Go to the CLI of the container
+docker exec -it pg psql -Upostgres -dpostgres
+
+# Create a user and database
+postgres=# create database liquibase_db;
+postgres=# create user root with encrypted password 'root';
+postgres=# grant all privileges on database liquibase_db to root;
+
+# Checking the connection
+docker exec -it pg psql -Uroot -dliquibase_db
+
+# Create a schema
+CREATE SCHEMA liquibase_db;
+
+# Crate migration

@@ -1,0 +1,9 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/liquibase_db
+        username: root
+        password: root
+
+    liquibase:
+        change-log: classpath:db/changelog/app-changelog.xml
+        default-schema: liquibase_db
