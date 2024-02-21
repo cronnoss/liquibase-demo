@@ -16,6 +16,7 @@ docker exec -it pg psql -Uroot -dliquibase_db
 CREATE SCHEMA liquibase_db;
 
 # Create migration (update)
+cd src/main/resources/ && \
 liquibase --changeLogFile=db/changelog/db.changelog.yaml --url="jdbc:postgresql://localhost:5432/liquibase_db?currentSchema=liquibase_db" --username=root --password=root update
 
 # Show the status of the migration
