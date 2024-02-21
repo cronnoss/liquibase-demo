@@ -21,3 +21,14 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: db/changelog/undoing/U1.0.0_2__add_username_column.sql
+  - changeSet:
+      id: 1.0.0_3__apply_username_column
+      author: johndoe
+      changes:
+        - sqlFile:
+            path: db/changelog/migration/V1.0.0_3__apply_default_username_to_users.sql
+        - tagDatabase:
+            tag: ISSUE-2
+      rollback:
+        - sqlFile:
+            path: db/changelog/undoing/U1.0.0_3__apply_default_username_to_users.sql
