@@ -5,5 +5,9 @@ spring:
         password: root
 
     liquibase:
-        change-log: classpath:db/changelog/app-changelog.xml
+        change-log: classpath:db/changelog/db.changelog.yaml
         default-schema: liquibase_db
+
+preliquibase:
+    sqlScriptReferences: classpath:db/changelog/schema/SCHEMA.sql
+    enabled: false
