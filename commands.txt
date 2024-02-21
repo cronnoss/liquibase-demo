@@ -15,4 +15,12 @@ docker exec -it pg psql -Uroot -dliquibase_db
 # Create a schema
 CREATE SCHEMA liquibase_db;
 
-# Crate migration
+# Create migration
+
+
+# Show the status of the migration
+liquibase status --changelog-file=db/changelog/db.changelog.yaml --url="jdbc:postgresql://localhost:5432/liquibase_db?currentSchema=liquibase_db" --username=root --password=root
+
+# Rollback migration
+liquibase rollbackCount --changelog-file=db/changelog/db.changelog.yaml --count=1 --url="jdbc:postgresql://localhost:5432/liquibase_db?currentSchema=liquibase_db" --username=root --password=root
+

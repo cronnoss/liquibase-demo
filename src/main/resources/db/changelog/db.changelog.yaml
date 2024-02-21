@@ -1,5 +1,7 @@
 databaseChangeLog:
   - include:
-      file: db/migration/V1.0.0_1_create_users_table.sql
+      file: db/changelog/migration/0001_create_users_table.sql
   - include:
-      file: db/migration/V1.0.0_2_insert_into_users.sql
+      file: db/changelog/migration/0002_insert_into_users.sql
+  - include:
+      file: db/changelog/db.changelog-1.0.0.yaml
