@@ -10,3 +10,14 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: db/changelog/undoing/U1.0.0_1__change_createdAt_column_name.sql
+  - changeSet:
+      id: 1.0.0_2__add_username_column
+      author: johndoe
+      changes:
+        - sqlFile:
+            path: db/changelog/migration/V1.0.0_2__add_username_column.sql
+        - tagDatabase:
+            tag: ISSUE-1
+      rollback:
+        - sqlFile:
+            path: db/changelog/undoing/U1.0.0_2__add_username_column.sql

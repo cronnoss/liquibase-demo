@@ -18,6 +18,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "username")
+    private String username;
+
     @Column(name = "created_At")
     private Date createdDate;
 }
